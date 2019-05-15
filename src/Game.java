@@ -55,50 +55,43 @@ public class Game
 	System.out.println("Type the name of which ship you would like to choose");
 	String shipChoice = readLine(">");
 	        
-	while(true)
-	{
-		if(shipChoice.equalsIgnoreCase("royal seaman") || shipChoice.equalsIgnoreCase("royal") || shipChoice.equalsIgnoreCase("royal seamen") || shipChoice.equalsIgnoreCase("seaman"))
-		{
-			System.out.println("You've chosen Royal Seaman");
-			boat = r;
-		    break;
-		}
-	            
-		if(shipChoice.equalsIgnoreCase("pirate"))
-		{
-			System.out.println("You've chosen pirate");
-			boat = p;
-			break;
-		}
-		            
-		if(shipChoice.equalsIgnoreCase("mercenary") || shipChoice.equalsIgnoreCase("mercenery") || shipChoice.equalsIgnoreCase("mercanary"))
-		{
-			System.out.println("You've chosen mercenary");
-			boat = m;
-			break;
-		}
-		            
-		if(shipChoice.equalsIgnoreCase("merchant"))
-		{
-			 System.out.println("You've chosen merchant");
-				boat = $;
-				break;
-		}
+	chooseShip();
 		
-		else
-		{
-			System.out.println("Try again");
-			shipChoice = readLine(">");
-		}
-	}
 		
-	
-	
 	//Each crew member eats one ration of food
 	public int eatFood()
 	{
 		food -= crew;
 		System.out.println(food + “ rations are left”);
 	}
-		
+	
+	
+	//Method to continue the game on any input
+    private void pressEnterToContinue()
+    {
+        String startGame = readLine("Press Enter to Continue");
+    }
+    
+    //Prints a bunch of lines to clear the screen
+    private void clearScreen()
+    {
+        for(int i = 0; i < 18; i++)
+        {
+            System.out.println("");
+        }
+    }
+    
+    //Shows the player ASCII art to show they died
+    private void youDied()
+    {
+        System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
+        System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
+        System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
+        System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
+        System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
+        System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
+        String endGame = readLine("");
+        youDied();
+    }
 }
+
