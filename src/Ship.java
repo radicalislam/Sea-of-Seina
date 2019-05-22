@@ -20,7 +20,7 @@ public class Ship extends Game
 		
 	}
 	
-	public chooseShip()
+	public char chooseShip()
 	{
 		while(true)
 		{
