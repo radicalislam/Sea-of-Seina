@@ -90,5 +90,61 @@ public class Ship extends Game
 		return sum;
 		}
 	}
+
+	public int getFood() {
+		return food;
+	}
+
+	public int getGold() {
+		return gold;
+	}
+
+	public int getCrew() {
+		return crew;
+	}
+
+	public int getCannons() {
+		return cannons;
+	}
+
+	public int getMorale() {
+		return morale;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public char getBoat() {
+		return boat;
+	}
+
+	public void setFood(int food) {
+		this.food = food;
+	}
+
+	public void setGold(int gold) {
+		this.gold = gold;
+	}
+
+	public void setCrew(int crew) {
+		this.crew = crew;
+	}
+
+	public void setCannons(int cannons) {
+		this.cannons = cannons;
+	}
+
+	public void setMorale(int morale) {
+		this.morale = morale;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public void setBoat(char boat) {
+		this.boat = boat;
+	}
 }
 
