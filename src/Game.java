@@ -82,28 +82,32 @@ public class Game
 			   scanner.nextLine();
 			}
 	    
-	    //Prints a bunch of lines to clear the screen
-	    private void clearScreen()
-	    {
-	        for(int i = 0; i < 18; i++)
-	        {
-	            System.out.println("");
-	        }
-	    }
 	    
-	    //Shows the player ASCII art to show they died
-	    private void youDied()
-	    {
-	        System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
-	        System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
-	        System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
-	        System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
-	        System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
-	        System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
-	        String endGame = readLine("");
-	        youDied();
-	    }
+	    
+	    
+	    
 
 	}
+	//Prints a bunch of lines to clear the screen
+	private void clearScreen()
+    {
+        for(int i = 0; i < 18; i++)
+        {
+            System.out.println("");
+        }
+    }
+	
+	//Shows the player ASCII art to show they died
+    private void youDied()
+    {
+        System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
+        System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
+        System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
+        System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
+        System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
+        System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
+        String endGame = readLine("");
+        youDied();
+    }
 }
 
