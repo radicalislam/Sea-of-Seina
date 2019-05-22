@@ -1,4 +1,3 @@
-
 public class Ship extends Game
 {
 	// instance variables
@@ -14,10 +13,15 @@ public class Ship extends Game
 	/**
 	* Constructor for objects of class Ship
 	*/
-	public Ship()
+	public Ship(int f, int g, int c, int ca, int h, int m)
 	{
-		// initialize instance variables
-		
+		food = f;
+		gold = g;
+		crew = c;
+		cannons = ca;
+		hp = h;
+		morale = m;
+				
 	}
 	
 	public char chooseShip()
@@ -136,7 +140,7 @@ public class Ship extends Game
 	}
 
 	public void setMorale(int morale) {
-		this.morale = morale;
+		this.morale = Math.max(0, Math.min(100, morale));
 	}
 
 	public void setHp(int hp) {
