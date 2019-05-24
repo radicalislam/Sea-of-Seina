@@ -2,15 +2,15 @@
 import java.util.Scanner;
 public class Game
 {
+	private boolean cursed = false;
+	
 	public static void main(String args[])
 	{
-		private boolean cursed = false;
-		
 		
 		// Constructor for objects of class Game
 		public Game()
 		{
-			cursed = false;
+			
 		}
 		
 		//Opening of the game
@@ -57,20 +57,22 @@ public class Game
 		System.out.println("");
 		System.out.println("Type the name of which ship you would like to choose");
 		  
-		Scanner in = new Scanner(System.in);  
-	    System.out.print("Enter your name: ");    
-	    String name = in.next();   
-	    System.out.println("Name: " + name);
+		Scanner shipChoice = new Scanner(System.in);  
+	    System.out.print("Pick your ship ");    
+	    String name = shipChoice.next();   
+	    System.out.println("Selected: " + name);
 		
 		    
 		
-		//chooseShip();
+		
 			
 			
 		//Each crew member eats one ration of food
 		public int eatFood()
 		{
-			food -= crew;
+			int temp = 0;
+			temp = getFood() - getCrew();
+			setFood(temp);
 			System.out.println(food + “ rations are left”);
 		}
 		
@@ -106,7 +108,7 @@ public class Game
         System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
         System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
         System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
-        String endGame = readLine("");
+        pressEnterToContinue();
         youDied();
     }
 }
