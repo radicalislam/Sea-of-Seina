@@ -25,8 +25,4 @@ public class Encounter extends Game
 		return x + y;
 	}
 	
-	private void pressEnterToContinue()
-	{
-		String startGame = readLine("Press Enter to Continue");
-    }
 }
