@@ -93,6 +93,7 @@ public class Ship extends Game
 			}
 		return sum;
 		}
+		return boat;
 	}
 
 	public int getFood() {
