@@ -64,30 +64,6 @@ public class Game
 		
 		    
 		
-		
-			
-			
-		//Each crew member eats one ration of food
-		public int eatFood()
-		{
-			int temp = 0;
-			temp = getFood() - getCrew();
-			setFood(temp);
-			System.out.println(food + “ rations are left”);
-		}
-		
-		
-		//Method to continue the game on any input
-		public void pressEnterToContinue(){
-			   System.out.println("Press \"ENTER\" to continue...");
-			   Scanner scanner = new Scanner(System.in);
-			   scanner.nextLine();
-			}
-	    
-	    
-	    
-	    
-	    
 
 	}
 	//Prints a bunch of lines to clear the screen
@@ -98,6 +74,24 @@ public class Game
             System.out.println("");
         }
     }
+	
+	//Each crew member eats one ration of food
+			public int eatFood()
+			{
+				int temp = 0;
+				temp = getFood() - getCrew();
+				setFood(temp);
+				System.out.println(food + “ rations are left”);
+			}
+	
+	
+	//Method to continue the game on any input
+	public void pressEnterToContinue()
+	{
+	   System.out.println("Press \"ENTER\" to continue...");
+	   Scanner enter = new Scanner(System.in);  
+	   String name = enter.next();   
+	}
 	
 	//Shows the player ASCII art to show they died
     private void youDied()
