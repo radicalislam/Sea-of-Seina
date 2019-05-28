@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Ship extends Game
 {
 	// instance variables
@@ -25,7 +27,7 @@ public class Ship extends Game
 	}
 	
 	public char chooseShip()
-	{
+	{	
 		while(true)
 		{
 			if(shipChoice.equalsIgnoreCase("royal seaman") || shipChoice.equalsIgnoreCase("royal") || shipChoice.equalsIgnoreCase("royal seamen") || shipChoice.equalsIgnoreCase("seaman"))
@@ -64,8 +66,10 @@ public class Ship extends Game
 		}
 	}
 	
+	
+	
 	//
-	public int attack()
+	public static int attack()
 	{
 		//If the # of crew >= the # of cannons then deal 2d4 damage per cannon
 		//If the # of crew < the # of cannons then deal 2d4 damage per crew
