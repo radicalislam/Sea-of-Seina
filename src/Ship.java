@@ -25,9 +25,9 @@ public class Ship extends Game
 		morale = m;
 				
 	}
-	
-	public char chooseShip()
-	{	
+
+	public void chooseShip()
+	{
 		while(true)
 		{
 			if(shipChoice.equalsIgnoreCase("royal seaman") || shipChoice.equalsIgnoreCase("royal") || shipChoice.equalsIgnoreCase("royal seamen") || shipChoice.equalsIgnoreCase("seaman"))
@@ -97,6 +97,7 @@ public class Ship extends Game
 			}
 		return sum;
 		}
+		return boat;
 	}
 
 	public int getFood() {
