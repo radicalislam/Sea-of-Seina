@@ -13,7 +13,7 @@ public class Encounter extends Game
 	* Constructor for objects of class Encounter
 	 * @return 
 	*/
-	public static void Event()
+	public static void Event(Ship ship)
 	{
 		// Initialize instance variables
 		double Percentile = Math.random();
@@ -36,7 +36,11 @@ public class Encounter extends Game
 				System.out.println("Sho: Pirates...");
 				pressEnterToContinue();
 				System.out.print("What would you do?");
-				if(boat = Merchant)
+
+				if(ship = '$')
+
+				if(ship.getBoat() == '$')
+
 					{
 						System.out.print("What would you do?");
 						System.out.print("A: Diplomacy");
@@ -52,11 +56,14 @@ public class Encounter extends Game
 						eventCount++;
 					}
 			}
-		if(Percentile > 0.15 && Percentile <= 0.2) //Storm
+		if(Percentile > 0.15 && Percentile <= 0.35) //Storm
 			{
 				System.out.println("Crew: Captain Sho! It seems we have weathering company!");
 				pressEnterToContinue();
 				System.out.println();
+				System.out.println("Sho: Bloody hell. I hope we past get this one too.");
+				pressEnterToContinue();
+				
 		}
 		
 	}
