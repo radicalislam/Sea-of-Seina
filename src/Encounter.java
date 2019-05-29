@@ -8,21 +8,16 @@ public class Encounter extends Game
 {
 	// instance variables - replace the example below with your own
 	private int x;
-	
+	private int eventCount;
 	/**
 	* Constructor for objects of class Encounter
 	*/
 	public Encounter()
 	{
 		// initialise instance variables
-		x = 0;
+		double Percentile = Math.random();
+		if(Percentile > 0 && Percentile < 0.05) /*Merchant Ship*/
+		{
+			System.out.println
+		}
 	}
-	
-	
-	public int sampleMethod(int y)
-	{
-		// put your code here
-		return x + y;
-	}
-	
-}
