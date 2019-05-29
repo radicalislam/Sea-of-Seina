@@ -87,7 +87,7 @@ public class Game
 		System.out.println("Press \"ENTER\" to continue...");
 		sc.nextLine();
 	}
-    
+    	
     //Prints a bunch of lines to clear the screen
     private static void clearScreen()
     {
