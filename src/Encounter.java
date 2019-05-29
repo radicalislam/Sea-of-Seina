@@ -17,7 +17,7 @@ public class Encounter extends Game
 	{
 		// Initialize instance variables
 		double Percentile = Math.random();
-		if(Percentile > 0 && Percentile < 0.05) /*Merchant Ship*/
+		if(Percentile > 0 && Percentile <= 0.05) /*Merchant Ship*/
 			{
 				System.out.println("You see a beautiful three-masted, square rigged 'East Indiaman' type ship sailing towards you.");
 				pressEnterToContinue();
@@ -29,7 +29,7 @@ public class Encounter extends Game
 				eventCount++;
 				
 			}
-		if(Percentile > 0 && Percentile < 0.1) /*Pirate Ship*/
+		if(Percentile > 0.05 && Percentile <= 0.15) /*Pirate Ship*/
 			{
 				System.out.println("You see a ship of a black flag with a skull in the center.");
 				pressEnterToContinue();
@@ -52,11 +52,12 @@ public class Encounter extends Game
 						eventCount++;
 					}
 			}
-		if(Percentile > 0 && Percentile < 0.4)
+		if(Percentile > 0.15 && Percentile <= 0.2) //Storm
 			{
 				System.out.println("Crew: Captain Sho! It seems we have weathering company!");
 				pressEnterToContinue();
 				System.out.println()
 		}
+		
 	}
 }
