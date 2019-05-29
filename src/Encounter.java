@@ -68,7 +68,7 @@ public class Encounter extends Game
 		
 	}
 	
-	private static void shop()
+	private static void Shop()
 	{
 		System.out.println("You have come up to a port.");
 		pressEnterToContinue();
