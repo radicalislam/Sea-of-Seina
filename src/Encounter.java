@@ -52,14 +52,45 @@ public class Encounter extends Game
 						eventCount++;
 					}
 			}
-		if(Percentile > 0.15 && Percentile <= 0.35) //Storm
+		if(Percentile > 0.15 && Percentile <= 0.30) //Storm
 			{
 				System.out.println("Crew: Captain Sho! It seems we have weathering company!");
 				pressEnterToContinue();
 				System.out.println("Sho: Bloody hell. I hope we past get this one too.");
 				pressEnterToContinue();
-				
-		}
+				System.out.print("What would you do?");
+				System.out.print("A: Roll Up Sails");
+				System.out.print("B: Go Around");
+				System.out.print("C: Go Straight Through");
+				String option = sc.nextLine();
+				eventCount++;
+			}
+		if(Percentile > 0.30 && Percentile <= 0.35)
+			{
+				System.out.println("You are in the quater, listening to your crew's moans of suffering.");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				System.out.print("A: Pass out extra rations");
+				System.out.print("B: You: Who told you weaklings to slack off?");
+				String option = sc.nextLine();
+				eventCount++;
+			}
+		if(Percentile > 0.35 && Percentile <= 0.38)
+			{
+				System.out.println("It is night, where Sho is gazing at the star, thinking of Seina.");
+				pressEnterToContinue();
+				System.out.println("As you were unconciously staring at the star, you realize that the star's light is flickering.");
+				pressEnterToContinue();
+				System.out.println("You: What in Blazes is that?!");
+				pressEnterToContinue();
+				System.out.println("The light gets bigger, until you can see that it is some kind of disc.");
+				pressEnterToContinue();
+				System.out.println("The disc stops right above the mast, and after a short pause flies back up to the distance of space");
+				pressEnterToContinue();
+				System.out.println("Sho keeps this mysterious encounter to himself, being reminded our world is a mysterious place . . .");
+			}
+	}
+	
 		
 	}
 }
