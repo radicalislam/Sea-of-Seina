@@ -8,79 +8,55 @@ public class Encounter extends Game
 {
 	// instance variables - replace the example below with your own
 	private int x;
-	private int eventCount;
+	private static int eventCount = 0;
 	/**
 	* Constructor for objects of class Encounter
+	 * @return 
 	*/
-	public static Event()
+	public static void Event()
 	{
-		// RNG
+		// Initialize instance variables
 		double Percentile = Math.random();
-		if(Percentile >= 0 && Percentile <= 0.05) /*Merchant Ship*/
-		{
-			System.out.println
+		if(Percentile > 0 && Percentile < 0.05) /*Merchant Ship*/
+			{
+				System.out.println("You see a beautiful three-masted, square rigged 'East Indiaman' type ship sailing towards you.");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				System.out.print("A: Barter");
+				System.out.print("B: Attack");
+				System.out.print("C: Board");
+				String option = sc.nextLine();
+				eventCount++;
+				
+			}
+		if(Percentile > 0 && Percentile < 0.1) /*Pirate Ship*/
+			{
+				System.out.println("You see a ship of a black flag with a skull in the center.");
+				pressEnterToContinue();
+				System.out.println("Sho: Pirates...");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				if(ship = Merchant)
+					{
+						System.out.print("What would you do?");
+						System.out.print("A: Diplomacy");
+						System.out.print("B: Flee");
+						String option = sc.nextLine();
+						eventCount++;
+					}
+				else
+					{
+						System.out.print("A: Fight");
+						System.out.print("B: Flee");
+						String option = sc.nextLine();
+						eventCount++;
+					}
+			}
+		if(Percentile > 0 && Percentile < 0.4)
+			{
+				System.out.println("Crew: Captain Sho! It seems we have weathering company!");
+				pressEnterToContinue();
+				System.out.println()
 		}
-		
-		if(Percentile > 0.05 && Percentile <= 0.15) /*Pirate Ship*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.15 && Percentile <= 0.17) /*Storm*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.17 && Percentile <= 0.2) /*Scurvy*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.2 && Percentile <= 0.3) /*Help a Ship*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.3 && Percentile <= 0.33) /*Shrooms*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.33 && Percentile <= 0.35) /*Siren Risa*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.35 && Percentile <= 0.45) /*Royal Patrol*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.45 && Percentile <= 0.50 ) /*Doby Mick*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.50 && Percentile <= 0.53) /*Flying Dutchman*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.53 && Percentile <= 0.55) /*Cocone*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.55 && Percentile <= 0.60) /*Vortex*/
-		{
-			System.out.println
-		}
-		
-		if(Percentile > 0.9 && Percentile <= 1) /*Stowaway*/
-		{
-			System.out.println
-		}
-		
-		
-		
 	}
+}
