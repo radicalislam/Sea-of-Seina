@@ -13,8 +13,9 @@ public class Ship extends Game
 	/**
 	* Constructor for objects of class Ship
 	*/
-	private Ship(int f, int g, int c, int ca, int h, int m)
+	private Ship(char b, int f, int g, int c, int ca, int h, int m)
 	{
+		boat = b;
 		food = f;
 		gold = g;
 		crew = c;
@@ -25,22 +26,22 @@ public class Ship extends Game
 	
 	public static Ship createRoyalSeaman()
 	{
-		return new Ship(100, 60, 20, 10, 150, 60);
+		return new Ship('r', 100, 60, 20, 10, 150, 60);
 	}
 	
 	public static Ship createPirate()
 	{
-		return new Ship(90,30,30,6,90,40);
+		return new Ship('p', 90,30,30,6,90,40);
 	}
 	
 	public static Ship createMerchant()
 	{
-		return new Ship(100,150,5,0,50,50);
+		return new Ship('$', 100,150,5,0,50,50);
 	}
 	
 	public static Ship createMercenary()
 	{
-		return new Ship(60,50,15,15,100,35);
+		return new Ship('m', 60,50,15,15,100,35);
 	}
 	
 	public static Ship chooseShip()
