@@ -67,4 +67,18 @@ public class Encounter extends Game
 		}
 		
 	}
+	
+	private static void shop()
+	{
+		System.out.println("You have come up to a port.");
+		pressEnterToContinue();
+		System.out.print("What would you like to buy?");
+		System.out.print("A: HP");
+		System.out.print("B: Food");
+		String option2 = sc.nextLine();
+		if( option2.equalsIgnoreCase("a"))
+		{
+			System.out.println("1 food = 1 gold");
+		}
+	}
 }
