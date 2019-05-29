@@ -72,12 +72,23 @@ public class Ship extends Game
 				return createMerchant();
 			}
 			
+			if(shipChoice.equalsIgnoreCase("developer"))
+			{
+				System.out.println("Stop cheating loser");
+				return createDeveloper();
+			}
+			
 			System.out.println("Try again");
 			System.out.println(">");
 			shipChoice = Game.sc.nextLine();
 		}
 	}
 	
+	private static Ship createDeveloper() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	//
 	public int attack()
 	{
