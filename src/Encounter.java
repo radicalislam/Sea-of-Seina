@@ -36,7 +36,7 @@ public class Encounter extends Game
 				System.out.println("Sho: Pirates...");
 				pressEnterToContinue();
 				System.out.print("What would you do?");
-				if(ship = Merchant)
+				if(boat = Merchant)
 					{
 						System.out.print("What would you do?");
 						System.out.print("A: Diplomacy");
@@ -56,7 +56,7 @@ public class Encounter extends Game
 			{
 				System.out.println("Crew: Captain Sho! It seems we have weathering company!");
 				pressEnterToContinue();
-				System.out.println()
+				System.out.println();
 		}
 		
 	}
