@@ -55,13 +55,18 @@ public class Game
 		System.out.println("\nType the name of which ship you would like to choose");
 		ship = Ship.chooseShip();
 		
-	    System.out.print("Enter your name: ");    
-	    String name = sc.next();   
-	    System.out.println("Name: " + name);
+	    System.out.print("Captain SHO!!!! Wake up, its time to sail we need to save princess Seina. ");    
+	   
 	    
 	    clearScreen();
 	    
-	    
+	    for(int i = 0; i > 9; i++)
+	    {
+		    if(Encounter.getEventCount() % 3 == 0) {
+		    	clearScreen();
+		    	Encounter.Event(ship);
+		    }
+	    }
 	    
 	    
 	    sc.close();
