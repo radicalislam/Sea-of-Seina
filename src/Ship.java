@@ -1,4 +1,3 @@
-
 public class Ship extends Game
 {
 	// instance variables
@@ -14,49 +13,68 @@ public class Ship extends Game
 	/**
 	* Constructor for objects of class Ship
 	*/
-	public Ship()
+	private Ship(int f, int g, int c, int ca, int h, int m)
 	{
-		// initialize instance variables
-		
+		food = f;
+		gold = g;
+		crew = c;
+		cannons = ca;
+		hp = h;
+		morale = m;
 	}
 	
-	public char chooseShip()
+	public static Ship createRoyalSeaman()
 	{
+		return new Ship(100, 60, 20, 10, 150, 60);
+	}
+	
+	public static Ship createPirate()
+	{
+		return new Ship(90,30,30,6,90,40);
+	}
+	
+	public static Ship createMerchant()
+	{
+		return new Ship(100,150,5,0,50,50);
+	}
+	
+	public static Ship createMercenary()
+	{
+		return new Ship(60,50,15,15,100,35);
+	}
+	
+	public static Ship chooseShip()
+	{
+		String shipChoice = "";
 		while(true)
 		{
 			if(shipChoice.equalsIgnoreCase("royal seaman") || shipChoice.equalsIgnoreCase("royal") || shipChoice.equalsIgnoreCase("royal seamen") || shipChoice.equalsIgnoreCase("seaman"))
 			{
 				System.out.println("You've chosen Royal Seaman");
-				return boat = r;
-			    break;
+				return createRoyalSeaman();
 			}
 		            
 			if(shipChoice.equalsIgnoreCase("pirate"))
 			{
 				System.out.println("You've chosen pirate");
-				return boat = p;
-				break;
+				return createPirate();
 			}
 			            
 			if(shipChoice.equalsIgnoreCase("mercenary") || shipChoice.equalsIgnoreCase("mercenery") || shipChoice.equalsIgnoreCase("mercanary"))
 			{
 				System.out.println("You've chosen mercenary");
-				return boat = m;
-				break;
+				return createMercenary();
 			}
 			            
 			if(shipChoice.equalsIgnoreCase("merchant"))
 			{
 				System.out.println("You've chosen merchant");
-				return boat = $;
-				break;
+				return createMerchant();
 			}
 			
-			else
-			{
-				System.out.println("Try again");
-				shipChoice = readLine(">");
-			}
+			System.out.println("Try again");
+			System.out.println(">");
+			shipChoice = Game.sc.nextLine();
 		}
 	}
 	
@@ -66,29 +84,25 @@ public class Ship extends Game
 		//If the # of crew >= the # of cannons then deal 2d4 damage per cannon
 		//If the # of crew < the # of cannons then deal 2d4 damage per crew
 		//If 0 cannons, then deal 0 damage
+		int sum = 0;
 		if(crew >= cannons)
 		{
-			
 			//BE SURE TO TEST
-			int sum = 0;
 			for(int i = 0; i < cannons; i++)
 			{
 				//rolls 2d4 damage
 				sum += (int) ((Math.random() * 4) + 1 + (Math.random() * 4) + 1);
 			}
-		return sum;
 		}
-		
-		if(crew < cannons)
+		else if(crew < cannons)
 		{
-			int sum = 0;
 			for(int i = 0; i < crew; i++)
 			{
 				//rolls 2d4 damage
 				sum += (int) ((Math.random() * 4) + 1 + (Math.random() * 4) + 1);
 			}
-		return sum;
 		}
+		return sum;
 	}
 
 	public int getFood() {
@@ -136,7 +150,7 @@ public class Ship extends Game
 	}
 
 	public void setMorale(int morale) {
-		this.morale = morale;
+		this.morale = Math.max(0, Math.min(100, morale));
 	}
 
 	public void setHp(int hp) {

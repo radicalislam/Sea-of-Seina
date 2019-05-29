@@ -2,17 +2,13 @@
 import java.util.Scanner;
 public class Game
 {
-	public static void main(String args[])
+	//private static boolean cursed = false;
+	public static Scanner sc;
+	private static Ship ship;
+	
+	public static void main(String[] args) 
 	{
-		private boolean cursed = false;
-		
-		
-		// Constructor for objects of class Game
-		public Game()
-		{
-			cursed = false;
-		}
-		
+		sc = new Scanner(System.in);
 		//Opening of the game
 		System.out.print("Welcome to Sea of Seina \n");
 		pressEnterToContinue();
@@ -54,56 +50,62 @@ public class Game
 				" \n");
 		
 		//where the player chooses their ship
-		System.out.println("");
-		System.out.println("Type the name of which ship you would like to choose");
-		  
-		Scanner in = new Scanner(System.in);  
+		System.out.println("\nType the name of which ship you would like to choose");
+		ship = Ship.chooseShip();
+		
 	    System.out.print("Enter your name: ");    
-	    String name = in.next();   
+	    String name = sc.next();   
 	    System.out.println("Name: " + name);
-		
-		    
-		
-		//chooseShip();
-			
-			
-		//Each crew member eats one ration of food
-		public int eatFood()
-		{
-			food -= crew;
-			System.out.println(food + “ rations are left”);
-		}
-		
-		
-		//Method to continue the game on any input
-		public void pressEnterToContinue(){
-			   System.out.println("Press \"ENTER\" to continue...");
-			   Scanner scanner = new Scanner(System.in);
-			   scanner.nextLine();
-			}
 	    
-	    //Prints a bunch of lines to clear the screen
-	    private void clearScreen()
-	    {
-	        for(int i = 0; i < 18; i++)
-	        {
-	            System.out.println("");
-	        }
-	    }
 	    
-	    //Shows the player ASCII art to show they died
-	    private void youDied()
-	    {
-	        System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
-	        System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
-	        System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
-	        System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
-	        System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
-	        System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
-	        String endGame = readLine("");
-	        youDied();
-	    }
-
+	    
+	    
+	    
+	    
+	    sc.close();
 	}
+	    
+	
+	//chooseShip();
+	
+	public static void printShipStats()
+	{
+		System.out.println("Current status:\nhp: " + ship.getHp() + "\nfood:" + ship.getFood() + "\ngold:" + ship.getGold() + "\nmoral" + ship.getMorale() + "\ncrew" + ship.getCrew() + "\ncannon" + ship.getCannons());
+	}
+	
+	//Each crew member eats one ration of food
+	public static void eatFood()
+	{
+		ship.setFood(ship.getFood() - ship.getCrew());
+		System.out.println(ship.getFood() + " rations are left");
+	}
+	
+	
+	//Method to continue the game on any input
+	public static void pressEnterToContinue()
+	{
+		System.out.println("Press \"ENTER\" to continue...");
+		sc.nextLine();
+	}
+    
+    //Prints a bunch of lines to clear the screen
+    private static void clearScreen()
+    {
+        for(int i = 0; i < 18; i++)
+        {
+            System.out.println();
+        }
+    }
+    
+    //Shows the player ASCII art to show they died
+    private static void youDied()
+    {
+        System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
+        System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
+        System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
+        System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
+        System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
+        System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
+    }
 }
 

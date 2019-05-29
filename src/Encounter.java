@@ -21,5 +21,3 @@ public class Encounter extends Game
 			System.out.println
 		}
 	}
-	
-	
