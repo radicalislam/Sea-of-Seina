@@ -12,12 +12,34 @@ public class Encounter extends Game
 	/**
 	* Constructor for objects of class Encounter
 	*/
-	public Encounter()
+	public static Event()
 	{
-		// initialise instance variables
+		// RNG
 		double Percentile = Math.random();
-		if(Percentile > 0 && Percentile < 0.05) /*Merchant Ship*/
+		if(Percentile >= 0 && Percentile <= 0.05) /*Merchant Ship*/
 		{
 			System.out.println
 		}
+		
+		if(Percentile > 0.05 && Percentile <= 0.15) /*Pirate Ship*/
+		{
+			System.out.println
+		}
+		
+		if(Percentile > 0.15 && Percentile <= 0.17) /*Storm*/
+		{
+			System.out.println
+		}
+		
+		if(Percentile > 0.17 && Percentile < 0.2) /*Scurvy*/
+		{
+			System.out.println
+		}
+		
+		
+		
+		
+		
+		
+		
 	}
