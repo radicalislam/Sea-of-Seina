@@ -1,21 +1,10 @@
-/**
-* Write a description of class Encounter here.
-*
-* @author (your name)
-* @version (a version number or a date)
-*/
 public class Encounter extends Game
 {
-	// instance variables - replace the example below with your own
-	private int x;
+	
 	private static int eventCount = 0;
-	/**
-	* Constructor for objects of class Encounter
-	 * @return 
-	*/
+	
 	public static void Event(Ship ship)
 	{
-		// Initialize instance variables
 		double Percentile = Math.random();
 		if(Percentile > 0 && Percentile <= 0.05) /*Merchant Ship*/
 			{
@@ -80,5 +69,12 @@ public class Encounter extends Game
 		{
 			System.out.println("1 food = 1 gold");
 		}
+	}
+	
+	
+	
+	
+	public static int getEventCount() {
+		return eventCount;
 	}
 }

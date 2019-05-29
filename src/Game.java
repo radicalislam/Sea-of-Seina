@@ -60,7 +60,13 @@ public class Game
 	    
 	    clearScreen();
 	    
-	    
+	    for(int i = 0; i > 9; i++)
+	    {
+		    if(Encounter.getEventCount() % 3 == 0) {
+		    	clearScreen();
+		    	Encounter.Event(ship);
+		    }
+	    }
 	    
 	    
 	    sc.close();
