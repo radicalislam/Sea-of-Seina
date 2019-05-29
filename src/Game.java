@@ -49,6 +49,8 @@ public class Game
 				"Morale, 35% on a scale of 0%-100%\r\n" + 
 				" \n");
 		
+	
+		
 		//where the player chooses their ship
 		System.out.println("\nType the name of which ship you would like to choose");
 		ship = Ship.chooseShip();
@@ -57,7 +59,7 @@ public class Game
 	    String name = sc.next();   
 	    System.out.println("Name: " + name);
 	    
-	    
+	    clearScreen();
 	    
 	    
 	    
@@ -87,7 +89,7 @@ public class Game
 		System.out.println("Press \"ENTER\" to continue...");
 		sc.nextLine();
 	}
-    
+    	
     //Prints a bunch of lines to clear the screen
     private static void clearScreen()
     {
