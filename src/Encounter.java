@@ -25,9 +25,6 @@ public class Encounter extends Game
 				System.out.println("Sho: Pirates...");
 				pressEnterToContinue();
 				System.out.print("What would you do?");
-
-				if(ship = '$')
-
 				if(ship.getBoat() == '$')
 
 					{
@@ -69,7 +66,7 @@ public class Encounter extends Game
 				String option = sc.nextLine();
 				eventCount++;
 			}
-		if(Percentile > 0.35 && Percentile <= 0.38)
+		if(Percentile > 0.35 && Percentile <= 0.38) /*UFo*/
 			{
 				System.out.println("It is night, where Sho is gazing at the star, thinking of Seina.");
 				pressEnterToContinue();
@@ -83,6 +80,59 @@ public class Encounter extends Game
 				pressEnterToContinue();
 				System.out.println("Sho keeps this mysterious encounter to himself, being reminded our world is a mysterious place . . .");
 			}
+		if(Percentile > 0.38 && Percentile <= 0.53) /*Help a stranded ship*/
+			{
+				System.out.println("You come across a ragged ship. As you get closer they are yelling for help and food.");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				System.out.print("A: Offer to fix their sails");
+				System.out.print("B: Pretend to help them then take over the ship");
+				System.out.print("C: Ignore");
+				String option = sc.nextLine();
+				eventCount++;
+			}	
+		if(Percentile > 0.53 && Percentile <= 0.60) /*Help a stranded ship*/
+			{
+				System.out.println("You come across your crews, acting weird and pleasant.");
+				pressEnterToContinue();
+				System.out.println("It seems to be that they somehow got their hands in some illegal scrooms.");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				System.out.print("A: Join the fun");
+				System.out.print("B: 'You animals. This ship is a drug free vessel'");
+				String option = sc.nextLine();
+				eventCount++;
+			}	
+		if(Percentile > 0.60 && Percentile <= 0.62) /*Siren Risa*/
+			{
+				System.out.println("Your ship is covered in a strong mist, and hear a silky girl's voice.");
+				pressEnterToContinue();
+				System.out.println("It gradually forms as a song in your head.");
+				pressEnterToContinue();
+				System.out.println("'Become our therapist~... Is anyone there?... Could you come over here...'");
+				pressEnterToContinue();
+				System.out.println("A siren pops out of the water, and rests on the mast");
+				pressEnterToContinue();
+				System.out.println("It seems to be that they somehow got their hands in some illegal scrooms.");
+				System.out.print("What would you do?");
+				System.out.print("A: Give in");
+				System.out.print("B: 'If I were to choose between your twin sister and Seina's dog, I would choose the dog!'");
+				String option = sc.nextLine();
+				eventCount++;
+			}	
+		if(Percentile > 0.60 && Percentile <= 0.70) /*Royal Ship*/
+			{
+				System.out.println("You come across a grand ship. It seems to be a research vessel, that hads a royal families' flag up.");
+				pressEnterToContinue();
+				System.out.println("Sho: It is the Endeavor...");
+				pressEnterToContinue();
+				System.out.print("What would you do?");
+				
+				System.out.print("A: Join the fun");
+				System.out.print("B: 'You animals. This ship is a drug free vessel'");
+				String option = sc.nextLine();
+				eventCount++;
+			}	
 	}
 	
 		
