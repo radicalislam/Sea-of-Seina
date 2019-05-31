@@ -19,7 +19,7 @@ public class Game
 				"Food, 100 kg\r\n" + 
 				"Crew, 20\r\n" + 
 				"Cannons, 10\r\n" + 
-				"Gold, 60\r\n" + 
+				"Gold, 60\r\n" +
 				"ShipHp,150\r\n" + 
 				"Morale, 60% on a scale of 0%-100%\r\n" + 
 				" \n");
@@ -56,24 +56,28 @@ public class Game
 		ship = Ship.chooseShip();
 		
 	    System.out.print("Captain SHO!!!! Wake up, its time to sail we need to save princess Seina. ");    
-	   
+	    pressEnterToCombat();
 	    
-	    clearScreen();
 	    
-	    for(int i = 0; i > 9; i++)
-	    {
-		    if(Encounter.getEventCount() % 3 == 0) {
-		    	clearScreen();
+	    for(int i = 1; i <= 9; i++)//9 days "i did the most of all the groups" -skylar kinney 2019 the fucking idiot Code wouldnt run all this time cuz he put a > instead of a < 
+	    { 
+	    	System.out.println("Day" + i);
+	    	pressEnterToContinue();
+	    	for(int x = 0; x < 3; x++) //3 events per day
+		    {
+		    	pressEnterToCombat();
 		    	Encounter.Event(ship);
 		    }
-	    }
+		    eatFood(); 
+		    Shop(ship);
+	    } 
 	    
-	    
-	    sc.close();
+	    System.out.println("Sho reaches the main kingdom and lies with Seina forever ZA ENDO!");
+	    sc.close();  
 	}
 	    
-	
 	//chooseShip();
+
 	
 	public static void printShipStats()
 	{
@@ -85,6 +89,37 @@ public class Game
 	{
 		ship.setFood(ship.getFood() - ship.getCrew());
 		System.out.println(ship.getFood() + " rations are left");
+		youDied();
+	}
+	
+	public static void Shop(Ship yourShip)
+	{
+		System.out.println("You have come up to a port.");
+		pressEnterToContinue();
+		System.out.println("What would you like to buy?");
+		System.out.println("NOTE:You may only purchase one of the 2 options each day. Choose wisely.");
+		System.out.println("A: HP");
+		System.out.println("B: Food");
+		String option2 = sc.nextLine();
+		if( option2.equalsIgnoreCase("b"))
+		{
+			System.out.println("1 food = 1 gold");
+			ship.setFood(ship.getFood() + 1);
+			System.out.println(ship.getFood());
+			System.out.println(ship.getGold());
+		}
+		if( option2.equalsIgnoreCase("a"))
+		{
+			System.out.println("Fix Ship (no matter the capacity, your health would rise up to 100) = 5 gold");
+			while(ship.getHp() < 101)
+			{
+				ship.setHp(ship.getHp() + 1);
+			}
+			ship.setHp(ship.getHp());
+			ship.setGold(ship.getGold() - 5);
+			System.out.println(ship.getHp());
+			System.out.println(ship.getGold());
+		}
 	}
 	
 	
@@ -95,24 +130,37 @@ public class Game
 		sc.nextLine();
 	}
     	
-    //Prints a bunch of lines to clear the screen
-    private static void clearScreen()
+    //Prints a bunch of lines to clear the screen 
+    public static void clearScreen()
     {
-        for(int i = 0; i < 18; i++)
+        for(int i = 0; i < 50; i++)
         {
             System.out.println();
         }
     }
     
+    
     //Shows the player ASCII art to show they died
-    private static void youDied()
+    protected static void youDied()
     {
+    	if(ship.getHp() <= 0 || ship.getFood() <= 0)
+    	{
         System.out.println(" __     ______  _    _   _____ _____ ______ _____  ");
         System.out.println(" \\ \\   / / __ \\| |  | | |  __ \\_   _|  ____|  __ \\ ");
         System.out.println("  \\ \\_/ / |  | | |  | | | |  | || | | |__  | |  | |");
         System.out.println("   \\   /| |  | | |  | | | |  | || | |  __| | |  | |");
         System.out.println("    | | | |__| | |__| | | |__| || |_| |____| |__| |");
         System.out.println("    |_|  \\____/ \\____/  |_____/_____|______|_____/ ");
+        clearScreen();
+        main(new String[1]);
+    	}
     }
-}
+     
+	public static void pressEnterToCombat()
+	{
+		System.out.println("Press \"ENTER\" to continue...");
+		sc.nextLine();
+		clearScreen();
+	}
+} 
 

@@ -13,6 +13,7 @@ public class Ship extends Game
 	/**
 	* Constructor for objects of class Ship
 	*/
+	
 	private Ship(char b, int f, int g, int c, int ca, int h, int m)
 	{
 		boat = b;
@@ -43,7 +44,56 @@ public class Ship extends Game
 	{
 		return new Ship('m', 60,50,15,15,100,35);
 	}
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	public static Ship createpirateShip()
+	{
+		return new Ship('p', 999, 30, 20, 20, 60, 9393);
+	}
 	
+	public static Ship createSiren()
+	{
+		return new Ship('s', 999,40,40,30,90,9393);
+	}
+	
+	public static Ship createEndeavor()
+	{
+		return new Ship('e', 999,30,30,20,60,9393);
+	}
+	
+	public static Ship createdobyMick()
+	{
+		return new Ship('d', 999,20,20,15,60,9393);
+	}
+		
+	
+	public static Ship createSeaWitchCocone()
+	{
+		return new Ship('c', 999,40,40, 70 ,150,9393);
+	}
+	
+	public static Ship createKraken()
+	{
+		return new Ship('k', 999,20,50,15,120,9393);
+	} 
+	
+	public static Ship createFlyingDutchman()
+	{
+		return new Ship('f', 999,30,40, 40,90,9393);
+	} 
+	
+	public static Ship createGermany()
+	{
+		return new Ship('G', 99999999, 999999,999999999, 999999999,999999999,999999999);
+	} 
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------
 	public static Ship chooseShip()
 	{
 		String shipChoice = "";
@@ -106,7 +156,7 @@ public class Ship extends Game
 				sum += (int) ((Math.random() * 4) + 1 + (Math.random() * 4) + 1);
 			}
 		}
-		else if(crew < cannons)
+		else if(crew < cannons) 
 		{
 			for(int i = 0; i < crew; i++)
 			{
@@ -116,6 +166,8 @@ public class Ship extends Game
 		}
 		return sum;
 	}
+	
+
 
 	public int getFood() {
 		return food;
@@ -146,7 +198,7 @@ public class Ship extends Game
 	}
 
 	public void setFood(int food) {
-		this.food = food;
+		this.food = food; 
 	}
 
 	public void setGold(int gold) {
@@ -165,8 +217,8 @@ public class Ship extends Game
 		this.morale = Math.max(0, Math.min(100, morale));
 	}
 
-	public void setHp(int hp) {
-		this.hp = hp;
+	public void setHp(int i) {
+		this.hp = i;
 	}
 
 	public void setBoat(char boat) {
